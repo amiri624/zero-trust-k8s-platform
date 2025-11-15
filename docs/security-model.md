@@ -1,4 +1,4 @@
-#
+
 # 🔐 Zero-Trust Security Model
 
 This platform implements a full Zero-Trust Architecture (ZTA) for Kubernetes workloads.
@@ -23,6 +23,4 @@ Zero Trust Principles Applied:
 Benefits:
 - No hardcoded secrets  
 - No long-lived tokens  
-- Full audit log  
-
----
+- Full audit log
