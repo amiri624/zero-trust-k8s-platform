@@ -1,0 +1,37 @@
+name: Deploy to ArgoCD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install argocd CLI
+        run: |
+          curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+          chmod +x /usr/local/bin/argocd
+
+      - name: Login to ArgoCD
+        env:
+          ARGO_SERVER: ${{ secrets.ARGOCD_SERVER }}
+          ARGO_USER: ${{ secrets.ARGOCD_USER }}
+          ARGO_PASS: ${{ secrets.ARGOCD_PASSWORD }}
+        run: |
+          argocd login $ARGO_SERVER --username $ARGO_USER --password $ARGO_PASS --insecure
+
+      - name: Sync demo app
+        run: argocd app sync demo-app
+YAML
+
+Secrets needed:
+
+ARGOCD_SERVER (e.g., argocd.example.com)
+
+ARGOCD_USER
+
+ARGOCD_PASSWORD

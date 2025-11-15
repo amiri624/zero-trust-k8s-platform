@@ -1,0 +1,20 @@
+cat > k8s/monitoring/demoapp-servicemonitor.yaml <<'YAML'
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: demo-app-monitor
+  namespace: monitoring
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  namespaceSelector:
+    any: false
+    matchNames:
+      - apps
+  endpoints:
+    - port: http
+      interval: 15s
+YAML
