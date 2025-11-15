@@ -1,1 +1,53 @@
-#
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1480" height="920" viewBox="0 0 1480 920" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .title { font: bold 26px sans-serif; fill: #333; }
+    .box   { fill: #f5f5f5; stroke: #555; stroke-width: 2; rx: 10; }
+    .sec   { fill: #e8f0ff; stroke: #3355aa; stroke-width: 2; rx: 10; }
+    .text  { font: 16px sans-serif; fill: #222; }
+    .small { font: 14px sans-serif; fill: #666; }
+  </style>
+
+  <text x="540" y="50" class="title">Zero-Trust Kubernetes Platform Architecture</text>
+
+  <!-- GitHub + CI/CD -->
+  <rect x="50" y="120" width="350" height="220" class="box"/>
+  <text x="70" y="155" class="text">CI/CD Pipeline (GitHub Actions)</text>
+  <text x="70" y="190" class="small">• Docker Build</text>
+  <text x="70" y="215" class="small">• Trivy Image Scanning</text>
+  <text x="70" y="240" class="small">• SBOM Generation</text>
+  <text x="70" y="265" class="small">• Push to Registry</text>
+  <text x="70" y="290" class="small">• ArgoCD Sync Trigger</text>
+
+  <!-- GitOps / ArgoCD -->
+  <rect x="450" y="120" width="350" height="220" class="box"/>
+  <text x="470" y="155" class="text">GitOps (ArgoCD Controller)</text>
+  <text x="470" y="190" class="small">• Auto Sync</text>
+  <text x="470" y="215" class="small">• Drift Detection</text>
+  <text x="470" y="240" class="small">• Rollbacks</text>
+  <text x="470" y="265" class="small">• Versioned Releases</text>
+
+  <!-- Kubernetes Cluster -->
+  <rect x="850" y="120" width="580" height="730" class="sec"/>
+  <text x="870" y="155" class="text">Kubernetes Cluster (Zero-Trust)</text>
+
+  <!-- Components inside Cluster -->
+  <text x="870" y="200" class="small">• Istio Service Mesh (mTLS STRICT)</text>
+  <text x="870" y="225" class="small">• NetworkPolicies (deny-all)</text>
+  <text x="870" y="250" class="small">• OPA Gatekeeper (Policy-as-Code)</text>
+  <text x="870" y="275" class="small">• Vault Agent Injector</text>
+  <text x="870" y="300" class="small">• Falco Runtime Security</text>
+  <text x="870" y="325" class="small">• Prometheus / Loki / Tempo / Grafana</text>
+  <text x="870" y="350" class="small">• Pod Security Standards (Baseline/Restricted)</text>
+
+  <!-- Microservice -->
+  <rect x="900" y="400" width="450" height="200" class="box"/>
+  <text x="920" y="435" class="text">Microservice (Demo App)</text>
+  <text x="920" y="470" class="small">• Deployment + HPA</text>
+  <text x="920" y="495" class="small">• Istio VirtualService</text>
+  <text x="920" y="520" class="small">• Sidecar injection</text>
+
+</svg>
