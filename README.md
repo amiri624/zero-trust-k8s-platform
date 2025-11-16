@@ -79,8 +79,7 @@ Works on EKS / GKE / AKS / K3s / Kind
 Easy multi-cluster setup
 
 
-
----
+```bash
 
 🧱 Project Structure
 
@@ -113,7 +112,7 @@ zero-trust-k8s-platform/
     └── deploy.sh
 
 
----
+```
 
 🔧 1. Infrastructure Setup (Terraform – Optional)
 
